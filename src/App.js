@@ -2,9 +2,18 @@ import React from "react";
 import "./styles.css";
 
 function Button({ color, disabled, text, onClick }) {
+  const buttonStyles = {
+    color: disabled ? "grey" : color,
+    backgroundColor: disabled ? "lightgrey" : "pink",
+    fontWeight: "bold",
+    fontSize: "1rem",
+    border: "0",
+    borderRadius: "5px",
+  };
+
   return (
     <>
-      <button onClick={onClick} disabled={disabled} style={{ color: color }}>
+      <button onClick={onClick} disabled={disabled} style={buttonStyles}>
         {text}
       </button>
     </>
